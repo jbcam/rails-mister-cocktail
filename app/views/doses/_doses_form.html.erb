@@ -1,7 +1,7 @@
 <%= simple_form_for [ @cocktail, @dose ],  wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <%= f.input :ingredient, collection: Ingredient.all, input_html: { class: "select2" } %>
+  <%= f.association :ingredient, input_html: { class: "select2" } %>
   <%= f.input :amount %>
   <%= f.input :description, class: 'input-group-btn'  %>
   <%= f.submit "+", class: "btn btn-primary" %>

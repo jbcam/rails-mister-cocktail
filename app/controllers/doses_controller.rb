@@ -7,9 +7,10 @@ class DosesController < ApplicationController
   def create
     @dose = Dose.new(dose_params)
     # we need `restaurant_id` to asssociate review with corresponding restaurant
-    @dose.cocktail = Cocktail.find(params[:cocktail_id])
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @dose.cocktail = @cocktail
     if @dose.save
-      redirect_to new_dose_path(@cocktail)
+      redirect_to new_cocktail_dose_path(@cocktail)
     else
       render :new
     end
@@ -18,6 +19,6 @@ class DosesController < ApplicationController
   private
 
   def dose_params
-    params.require(:dose).permit(:amount, :description)
+    params.require(:dose).permit(:ingredient_id, :amount, :description)
   end
 end

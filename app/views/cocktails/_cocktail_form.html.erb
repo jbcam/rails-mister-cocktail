@@ -1,6 +1,8 @@
 <%= simple_form_for [@cocktail] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= f.file_field :url %>
+  <%= f.hidden_field :url_cache, as: :hidden %>
   <%= f.input :name, label: "my cocktail's name" %>
   <%= f.submit "next", class: "btn btn-primary" %>
 <% end %>

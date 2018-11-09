@@ -1,5 +1,6 @@
 <div class="wrapper">
   <div class="container">
+    <%= render '/shared/list', cocktail: @cocktail  %>
     <div class="row">
       <div class="col d-flex j-c">
         <%= render 'doses_form', cocktail: @cocktail, dose: @dose %>
