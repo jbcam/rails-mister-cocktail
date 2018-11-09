@@ -1,0 +1,13 @@
+<!-- nav -->
+<%= render 'shared/navbar' %>
+<!-- banner -->
+<%= render '/shared/banner', cocktail: @cocktail  %>
+<!-- cocktail list -->
+<div class="wrapper">
+  <div class="container">
+    <%= render '/shared/list', cocktail: @cocktail  %>
+    <%= link_to 'back', cocktails_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<!-- footer -->
+<%= render 'shared/footer' %>

@@ -1,0 +1,22 @@
+<!-- nav -->
+<%= render 'shared/navbar' %>
+<!-- banner -->
+<%= render '/shared/banner', image: @image %>
+<!-- cocktail list -->
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-sm-4">
+          <!-- insert <div class="card"> -->
+          <%= render '/shared/card', cocktail: cocktail %>
+        </div>
+      <% end %>
+    </div>
+
+    <%= link_to 'share your cocktail', new_cocktail_path, class: "btn btn-primary btn-block mt" %>
+
+  </div>
+</div>
+<!-- footer -->
+<%= render 'shared/footer' %>

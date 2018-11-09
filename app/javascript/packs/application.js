@@ -9,3 +9,10 @@
 
 // app/javascript/packs/application.js
 import 'bootstrap';
+// select2
+import '../components/select2';
+// transparant nav
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
+// transparan
+

@@ -1,0 +1,7 @@
+<ul class="list-group">
+  <% @cocktail.doses.each do |dose| %>
+    <li class="list-group-item"><%= "#{dose.ingredient} - #{dose.amount} - #{dose.description} " %></li>
+<% end %>
+</ul>
+
+
